@@ -53,7 +53,7 @@ public class BaseClass {
 		return driver.get();
 	}
 
-	public static void launchApp(String browserName) {
+	public void launchApp(String browserName) {
 		// String browserName = prop.getProperty("browser");
 		if (browserName.equalsIgnoreCase("Chrome")) {
 			WebDriverManager.chromedriver().setup();
