@@ -38,13 +38,13 @@ public class HomePageTest extends BaseClass {
 	
 	@Test(groups = "Smoke",dataProvider = "credentials", dataProviderClass = DataProviders.class)
 	public void wishListTest(String uname, String pswd) throws Throwable {
-		Log.startTestCase("endToEndTest");
+		Log.startTestCase("wishListTest");
 		indexPage= new IndexPage();
 		loginPage=indexPage.clickOnSignIn();
 		homePage=loginPage.login(uname,pswd);
 		boolean result=homePage.validateMyWishList();
 		Assert.assertTrue(result);
-		Log.endTestCase("endToEndTest");
+		Log.endTestCase("wishListTest");
 	}
 	
 	@Test(groups = "Smoke",dataProvider = "credentials", dataProviderClass = DataProviders.class)
@@ -54,7 +54,7 @@ public class HomePageTest extends BaseClass {
 		loginPage=indexPage.clickOnSignIn();
 		homePage=loginPage.login(uname,pswd);
 		boolean result=homePage.validateOrderHistory();
-		Assert.assertTrue(false);
+		Assert.assertTrue(result);
 		Log.endTestCase("orderHistoryandDetailsTest");
 	}
 	
