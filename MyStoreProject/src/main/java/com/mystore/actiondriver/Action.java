@@ -762,9 +762,9 @@ public class Action extends BaseClass {
 			e.getMessage();
 		}
 		// This new path for jenkins
-		String newImageString = "http://localhost:8082/job/TestProject/ws/TestProject/ScreenShots/" + filename + "_"
+		String newImageString = "http://localhost:8082/job/MyStoreProject/ws/MyStoreProject/ScreenShots/" + filename + "_"
 				+ dateName + ".png";
-		return destination;
+		return newImageString;
 	}
 
 	public static String getCurrentTime() {

@@ -19,7 +19,7 @@
         <!-- report name - displayed at top-nav -->
         <reportName>MyStoreProject Report
          <![CDATA[
-                <img src='C:\Users\Hitendra\git\MyStore\MyStoreProject\Logo\MyStore.png'/>
+                <img src='http://localhost:8082/job/MyStoreProject/ws/MyStoreProject/Logo/MyStore.png'/>
             ]]>
         </reportName>
         
