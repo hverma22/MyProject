@@ -3,6 +3,10 @@
  */
 package com.mystore.dataprovider;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 import org.testng.annotations.DataProvider;
 
 import com.mystore.utility.NewExcelLibrary;
@@ -90,6 +94,29 @@ public class DataProviders {
 			}
 		}
 		return data;
+	}
+	
+	@DataProvider(name = "newAcountDetailsData")
+	public Object[][] accountCreation() {
+
+		List<HashMap<String, String>> arrayMapList = new ArrayList<HashMap<String, String>>();
+		HashMap<String, String> hashMapItems = new HashMap<String, String>();
+
+		// Totals rows count
+		int rows = obj.getRowCount("AccountCreationData");
+		// Total Columns
+		int column = obj.getColumnCount("AccountCreationData");
+		int actRows = rows - 1;
+		
+		for (int i = 0; i < actRows; i++) {
+			for (int j = 0; j < column; j++) {
+				hashMapItems.put(obj.getCellData("AccountCreationData", j, 1),
+						obj.getCellData("AccountCreationData", j, i + 2));
+			}
+		}
+		return new Object[][] {
+	        {hashMapItems}
+	    };
 	}
 
 }
