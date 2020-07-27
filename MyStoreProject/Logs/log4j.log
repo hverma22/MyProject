@@ -226,3 +226,5 @@
 2020-07-17 23:42:09 DEBUG cache:45 - TemplateLoader.findTemplateSource("v3html/logs-view/v3-html-testrunner-logs-view_en.ftl"): Not found
 2020-07-17 23:42:09 DEBUG cache:45 - TemplateLoader.findTemplateSource("v3html/logs-view/v3-html-testrunner-logs-view.ftl"): Found
 2020-07-17 23:42:09 DEBUG cache:45 - Loading template for "v3html/logs-view/v3-html-testrunner-logs-view.ftl"("en", UTF-8, parsed) from "jar:file:/C:/Users/Hitendra/.m2/repository/com/aventstack/extentreports/4.0.9/extentreports-4.0.9.jar!/com/aventstack/extentreports/view/v3html/logs-view/v3-html-testrunner-logs-view.ftl"
+2020-07-27 17:24:29 INFO  Log:11 - =====================================createAccountTest TEST START=========================================
+2020-07-27 17:24:45 INFO  Log:11 - =====================================verifyCreateAccountPageTest TEST START=========================================
