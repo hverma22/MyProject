@@ -54,7 +54,7 @@ public class HomePageTest extends BaseClass {
 		loginPage=indexPage.clickOnSignIn();
 		homePage=loginPage.login(uname,pswd,homePage);
 		boolean result=homePage.validateOrderHistory();
-		Assert.assertTrue(false);
+		Assert.assertTrue(result);
 		Log.endTestCase("orderHistoryandDetailsTest");
 	}
 	
