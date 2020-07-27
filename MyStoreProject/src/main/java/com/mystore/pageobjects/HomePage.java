@@ -16,6 +16,8 @@ import com.mystore.base.BaseClass;
  */
 public class HomePage extends BaseClass {
 	
+	Action action= new Action();
+	
 	@FindBy(xpath="//span[text()='My wishlists']")
 	WebElement myWishList;
 	
@@ -28,11 +30,11 @@ public class HomePage extends BaseClass {
 
 	
 	public boolean validateMyWishList() throws Throwable {
-		return Action.isDisplayed(getDriver(), myWishList);
+		return action.isDisplayed(getDriver(), myWishList);
 	}
 	
 	public boolean validateOrderHistory() throws Throwable {
-		return Action.isDisplayed(getDriver(), orderHistory);
+		return action.isDisplayed(getDriver(), orderHistory);
 	}
 	
 	public String getCurrURL() throws Throwable {

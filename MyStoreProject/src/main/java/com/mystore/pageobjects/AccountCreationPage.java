@@ -2,7 +2,6 @@
  * 
  */
 package com.mystore.pageobjects;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -14,6 +13,8 @@ import com.mystore.base.BaseClass;
  *
  */
 public class AccountCreationPage extends BaseClass {
+	
+	Action action= new Action();
 	
 	@FindBy(xpath = "//h1[text()='Create an account']")
 	WebElement formTitle;
@@ -102,28 +103,28 @@ public class AccountCreationPage extends BaseClass {
 			String mobilePhone) throws Throwable {
 		
 		if(gender.equalsIgnoreCase("Mr")) {
-			Action.click(getDriver(), mr);
+			action.click(getDriver(), mr);
 		} else {
-			Action.click(getDriver(), mrs);
+			action.click(getDriver(), mrs);
 		}
 		
-		Action.type(firstName, fName);
-		Action.type(lastName, lName);
-		Action.type(passWord, pswd);
-		Action.selectByValue(days, days1);
-		Action.selectByValue(months, month1);
-		Action.selectByValue(years, year1);
-		Action.type(companyName, comPany);
-		Action.type(address, addr);
-		Action.type(city, cityString);
-		Action.selectByVisibleText(stateName, state);
-		Action.type(postCode, zip);
-		Action.selectByVisibleText(countryName, country);
-		Action.type(mobile, mobilePhone);
+		action.type(firstName, fName);
+		action.type(lastName, lName);
+		action.type(passWord, pswd);
+		action.selectByValue(days, days1);
+		action.selectByValue(months, month1);
+		action.selectByValue(years, year1);
+		action.type(companyName, comPany);
+		action.type(address, addr);
+		action.type(city, cityString);
+		action.selectByVisibleText(stateName, state);
+		action.type(postCode, zip);
+		action.selectByVisibleText(countryName, country);
+		action.type(mobile, mobilePhone);
 	}
 	
 	public boolean validateAcountCreatePage() throws Throwable {
-		 return Action.isDisplayed(getDriver(), formTitle);
+		 return action.isDisplayed(getDriver(), formTitle);
 	}
 	
 }

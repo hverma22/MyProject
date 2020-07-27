@@ -16,6 +16,8 @@ import com.mystore.base.BaseClass;
  */
 public class AddToCartPage extends BaseClass {
 	
+	Action action= new Action();
+	
 	@FindBy(id="quantity_wanted")
 	WebElement quantity;
 	
@@ -36,25 +38,25 @@ public class AddToCartPage extends BaseClass {
 	}
 
 	public void enterQuantity(String quantity1) throws Throwable {
-		Action.type(quantity, quantity1);
+		action.type(quantity, quantity1);
 	}
 	
 	public void selectSize(String size1) throws Throwable {
-		Action.selectByVisibleText(size1, size);
+		action.selectByVisibleText(size1, size);
 	}
 	
 	public void clickOnAddToCart() throws Throwable {
-		Action.click(getDriver(), addToCartBtn);
+		action.click(getDriver(), addToCartBtn);
 	}
 	
 	public boolean validateAddtoCart() throws Throwable {
-		Action.fluentWait(getDriver(), addToCartMessag, 10);
-		return Action.isDisplayed(getDriver(), addToCartMessag);
+		action.fluentWait(getDriver(), addToCartMessag, 10);
+		return action.isDisplayed(getDriver(), addToCartMessag);
 	}
 	
 	public OrderPage clickOnCheckOut() throws Throwable {
-		Action.fluentWait(getDriver(), proceedToCheckOutBtn, 10);
-		Action.JSClick(getDriver(), proceedToCheckOutBtn);
+		action.fluentWait(getDriver(), proceedToCheckOutBtn, 10);
+		action.JSClick(getDriver(), proceedToCheckOutBtn);
 		return new OrderPage();
 	}
 	

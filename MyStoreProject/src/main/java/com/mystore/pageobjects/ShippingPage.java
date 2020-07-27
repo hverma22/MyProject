@@ -16,6 +16,8 @@ import com.mystore.base.BaseClass;
  */
 public class ShippingPage extends BaseClass {
 	
+	Action action= new Action();
+	
 	@FindBy(id="cgv")
 	WebElement terms;
 	
@@ -27,11 +29,11 @@ public class ShippingPage extends BaseClass {
 	}
 	
 	public void checkTheTerms() throws Throwable {
-		Action.click(getDriver(), terms);
+		action.click(getDriver(), terms);
 	}
 	
 	public PaymentPage clickOnProceedToCheckOut() throws Throwable {
-		Action.click(getDriver(), proceedToCheckOutBtn);
+		action.click(getDriver(), proceedToCheckOutBtn);
 		return new PaymentPage();
 	}
 

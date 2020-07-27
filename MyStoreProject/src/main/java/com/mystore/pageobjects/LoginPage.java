@@ -16,6 +16,8 @@ import com.mystore.base.BaseClass;
  */
 public class LoginPage extends BaseClass {
 	
+	Action action= new Action();
+	
 	@FindBy(id="email")
 	WebElement userName;
 	
@@ -35,27 +37,29 @@ public class LoginPage extends BaseClass {
 		PageFactory.initElements(getDriver(), this);
 	}
 	
-	public HomePage login(String uname, String pswd) throws Throwable {
-		Action.scrollByVisibilityOfElement(getDriver(), userName);
-		Action.type(userName, uname);
-		Action.type(password, pswd);
-		Action.JSClick(getDriver(), signInBtn);
+	public HomePage login(String uname, String pswd,HomePage homePage) throws Throwable {
+		action.scrollByVisibilityOfElement(getDriver(), userName);
+		action.type(userName, uname);
+		action.type(password, pswd);
+		action.JSClick(getDriver(), signInBtn);
 		Thread.sleep(2000);
-		return new HomePage();
+		homePage=new HomePage();
+		return homePage;
 	}
 	
-	public AddressPage login1(String uname, String pswd) throws Throwable {
-		Action.scrollByVisibilityOfElement(getDriver(), userName);
-		Action.type(userName, uname);
-		Action.type(password, pswd);
-		Action.click(getDriver(), signInBtn);
+	public AddressPage login(String uname, String pswd,AddressPage addressPage) throws Throwable {
+		action.scrollByVisibilityOfElement(getDriver(), userName);
+		action.type(userName, uname);
+		action.type(password, pswd);
+		action.click(getDriver(), signInBtn);
 		Thread.sleep(2000);
-		return new AddressPage();
+		addressPage=new AddressPage();
+		return addressPage;
 	}
 	
 	public AccountCreationPage createNewAccount(String newEmail) throws Throwable {
-		Action.type(emailForNewAccount, newEmail);
-		Action.click(getDriver(), createNewAccountBtn);
+		action.type(emailForNewAccount, newEmail);
+		action.click(getDriver(), createNewAccountBtn);
 		return new AccountCreationPage();
 	}
 	

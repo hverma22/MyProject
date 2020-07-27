@@ -43,7 +43,7 @@ public class LoginPageTest extends BaseClass {
 		loginPage=indexPage.clickOnSignIn();
 		Log.info("Enter Username and Password");
 	    //homePage=loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
-		homePage=loginPage.login(uname,pswd);
+		homePage=loginPage.login(uname,pswd,homePage);
 	    String actualURL=homePage.getCurrURL();
 	    String expectedURL="http://automationpractice.com/index.php?controller=my-account";
 	    Log.info("Verifying if user is able to login");

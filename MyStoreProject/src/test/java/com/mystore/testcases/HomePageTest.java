@@ -41,7 +41,7 @@ public class HomePageTest extends BaseClass {
 		Log.startTestCase("wishListTest");
 		indexPage= new IndexPage();
 		loginPage=indexPage.clickOnSignIn();
-		homePage=loginPage.login(uname,pswd);
+		homePage=loginPage.login(uname,pswd,homePage);
 		boolean result=homePage.validateMyWishList();
 		Assert.assertTrue(result);
 		Log.endTestCase("wishListTest");
@@ -52,7 +52,7 @@ public class HomePageTest extends BaseClass {
 		Log.startTestCase("orderHistoryandDetailsTest");
 		indexPage= new IndexPage();
 		loginPage=indexPage.clickOnSignIn();
-		homePage=loginPage.login(uname,pswd);
+		homePage=loginPage.login(uname,pswd,homePage);
 		boolean result=homePage.validateOrderHistory();
 		Assert.assertTrue(false);
 		Log.endTestCase("orderHistoryandDetailsTest");

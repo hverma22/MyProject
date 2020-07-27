@@ -16,6 +16,8 @@ import com.mystore.base.BaseClass;
  */
 public class OrderConfirmationPage extends BaseClass {
 	
+	Action action= new Action();
+	
 	@FindBy(xpath="//p/strong[contains(text(),'Your order on My Store is complete.')]")
 	WebElement confirmMessag;
 	

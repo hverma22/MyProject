@@ -26,28 +26,29 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.mystore.actioninterface.ActionInterface;
 import com.mystore.base.BaseClass;
 
 /**
  * @author Hitendra Verma added on 13th March2019
  *
  */
-public class Action extends BaseClass {
+public class Action extends BaseClass implements ActionInterface {
 
-	public static void scrollByVisibilityOfElement(WebDriver driver, WebElement ele) {
+	public void scrollByVisibilityOfElement(WebDriver driver, WebElement ele) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();", ele);
 
 	}
 
-	public static void click(WebDriver driver, WebElement ele) throws Throwable {
+	public void click(WebDriver driver, WebElement ele) {
 
 		Actions act = new Actions(driver);
 		act.moveToElement(ele).click().build().perform();
 
 	}
 
-	public static boolean findElement(WebDriver driver, WebElement ele) throws Throwable {
+	public boolean findElement(WebDriver driver, WebElement ele) {
 		boolean flag = false;
 		try {
 			ele.isDisplayed();
@@ -66,7 +67,7 @@ public class Action extends BaseClass {
 		return flag;
 	}
 
-	public static boolean isDisplayed(WebDriver driver, WebElement ele) throws Throwable {
+	public boolean isDisplayed(WebDriver driver, WebElement ele) {
 		boolean flag = false;
 		flag = findElement(driver, ele);
 		if (flag) {
@@ -82,7 +83,7 @@ public class Action extends BaseClass {
 		return flag;
 	}
 
-	public static boolean isSelected(WebDriver driver, WebElement ele) throws Throwable {
+	public boolean isSelected(WebDriver driver, WebElement ele) {
 		boolean flag = false;
 		flag = findElement(driver, ele);
 		if (flag) {
@@ -98,7 +99,7 @@ public class Action extends BaseClass {
 		return flag;
 	}
 
-	public static boolean isEnabled(WebDriver driver, WebElement ele) throws Throwable {
+	public boolean isEnabled(WebDriver driver, WebElement ele) {
 		boolean flag = false;
 		flag = findElement(driver, ele);
 		if (flag) {
@@ -120,9 +121,8 @@ public class Action extends BaseClass {
 	 * @param locatorName
 	 * @param text
 	 * @return - true/false
-	 * @throws Throwable
 	 */
-	public static boolean type(WebElement ele, String text) throws Throwable {
+	public boolean type(WebElement ele, String text) {
 		boolean flag = false;
 		try {
 			flag = ele.isDisplayed();
@@ -144,7 +144,7 @@ public class Action extends BaseClass {
 		return flag;
 	}
 
-	public static boolean selectBySendkeys(String value,WebElement ele) throws Throwable {
+	public boolean selectBySendkeys(String value,WebElement ele) {
 		boolean flag = false;
 		try {
 			ele.sendKeys(value);
@@ -175,7 +175,7 @@ public class Action extends BaseClass {
 	 *                    Listbox etc..)
 	 * 
 	 */
-	public static boolean selectByIndex(WebElement element, int index) throws Throwable {
+	public boolean selectByIndex(WebElement element, int index) {
 		boolean flag = false;
 		try {
 			Select s = new Select(element);
@@ -205,7 +205,7 @@ public class Action extends BaseClass {
 	 *                    Listbox etc..)
 	 */
 
-	public static boolean selectByValue(WebElement element,String value) throws Throwable {
+	public boolean selectByValue(WebElement element,String value) {
 		boolean flag = false;
 		try {
 			Select s = new Select(element);
@@ -236,7 +236,7 @@ public class Action extends BaseClass {
 	 *                    Listbox etc..)
 	 */
 
-	public static boolean selectByVisibleText(String visibletext, WebElement ele) throws Throwable {
+	public boolean selectByVisibleText(String visibletext, WebElement ele) {
 		boolean flag = false;
 		try {
 			Select s = new Select(ele);
@@ -254,7 +254,7 @@ public class Action extends BaseClass {
 		}
 	}
 
-	public static boolean mouseHoverByJavaScript(WebElement ele) throws Throwable {
+	public boolean mouseHoverByJavaScript(WebElement ele) {
 		boolean flag = false;
 		try {
 			WebElement mo = ele;
@@ -279,7 +279,7 @@ public class Action extends BaseClass {
 		}
 	}
 
-	public static boolean JSClick(WebDriver driver, WebElement ele) throws Throwable {
+	public boolean JSClick(WebDriver driver, WebElement ele) {
 		boolean flag = false;
 		try {
 			// WebElement element = driver.findElement(locator);
@@ -304,7 +304,7 @@ public class Action extends BaseClass {
 		return flag;
 	}
 
-	public static boolean switchToFrameByIndex(WebDriver driver,int index) throws Throwable {
+	public boolean switchToFrameByIndex(WebDriver driver,int index) {
 		boolean flag = false;
 		try {
 			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//iframe")));
@@ -329,7 +329,7 @@ public class Action extends BaseClass {
 	 * @param idValue : Frame ID wish to switch
 	 * 
 	 */
-	public static boolean switchToFrameById(WebDriver driver,String idValue) throws Throwable {
+	public boolean switchToFrameById(WebDriver driver,String idValue) {
 		boolean flag = false;
 		try {
 			driver.switchTo().frame(idValue);
@@ -354,7 +354,7 @@ public class Action extends BaseClass {
 	 * @param nameValue : Frame Name wish to switch
 	 * 
 	 */
-	public static boolean switchToFrameByName(WebDriver driver,String nameValue) throws Throwable {
+	public boolean switchToFrameByName(WebDriver driver,String nameValue) {
 		boolean flag = false;
 		try {
 			driver.switchTo().frame(nameValue);
@@ -372,7 +372,7 @@ public class Action extends BaseClass {
 		}
 	}
 
-	public static boolean switchToDefaultFrame(WebDriver driver) throws Throwable {
+	public boolean switchToDefaultFrame(WebDriver driver) {
 		boolean flag = false;
 		try {
 			driver.switchTo().defaultContent();
@@ -390,7 +390,7 @@ public class Action extends BaseClass {
 		}
 	}
 
-	public static void mouseOverElement(WebDriver driver,WebElement element) throws Throwable {
+	public void mouseOverElement(WebDriver driver,WebElement element) {
 		boolean flag = false;
 		try {
 			new Actions(driver).moveToElement(element).build().perform();
@@ -406,7 +406,7 @@ public class Action extends BaseClass {
 		}
 	}
 
-	public static boolean moveToElement(WebDriver driver, WebElement ele) {
+	public boolean moveToElement(WebDriver driver, WebElement ele) {
 		boolean flag = false;
 		try {
 			// WebElement element = driver.findElement(locator);
@@ -422,7 +422,7 @@ public class Action extends BaseClass {
 		return flag;
 	}
 
-	public static boolean mouseover(WebDriver driver, WebElement ele) throws Throwable {
+	public boolean mouseover(WebDriver driver, WebElement ele) {
 		boolean flag = false;
 		try {
 			new Actions(driver).moveToElement(ele).build().perform();
@@ -441,8 +441,7 @@ public class Action extends BaseClass {
 		}
 	}
 	
-	public static boolean draggable(WebDriver driver,WebElement source, int x, int y)
-			throws Throwable {
+	public boolean draggable(WebDriver driver,WebElement source, int x, int y) {
 		boolean flag = false;
 		try {
 			new Actions(driver).dragAndDropBy(source, x, y).build().perform();
@@ -463,8 +462,7 @@ public class Action extends BaseClass {
 		}
 	}
 
-	public static boolean draganddrop(WebDriver driver,WebElement source, WebElement target)
-			throws Throwable {
+	public boolean draganddrop(WebDriver driver,WebElement source, WebElement target) {
 		boolean flag = false;
 		try {
 			new Actions(driver).dragAndDrop(source, target).perform();
@@ -483,8 +481,7 @@ public class Action extends BaseClass {
 	}
 	
 	
-	public static boolean slider(WebDriver driver,WebElement ele, int x, int y)
-			throws Throwable {
+	public boolean slider(WebDriver driver,WebElement ele, int x, int y) {
 		boolean flag = false;
 		try {
 			// new Actions(driver).dragAndDropBy(dragitem, 400, 1).build()
@@ -506,8 +503,7 @@ public class Action extends BaseClass {
 	}
 	
 	
-	public static boolean rightclick(WebDriver driver,WebElement ele)
-			throws Throwable {
+	public boolean rightclick(WebDriver driver,WebElement ele) {
 		boolean flag = false;
 		try {
 			Actions clicker = new Actions(driver);
@@ -528,8 +524,7 @@ public class Action extends BaseClass {
 	}
 	
 	
-	public static Boolean switchWindowByTitle(WebDriver driver,String windowTitle, int count)
-			throws Throwable {
+	public boolean switchWindowByTitle(WebDriver driver,String windowTitle, int count) {
 		boolean flag = false;
 		try {
 			Set<String> windowList = driver.getWindowHandles();
@@ -556,8 +551,7 @@ public class Action extends BaseClass {
 		}
 	}
 	
-	public static Boolean switchToNewWindow(WebDriver driver)
-			throws Throwable {
+	public boolean switchToNewWindow(WebDriver driver) {
 		boolean flag = false;
 		try {
 
@@ -578,8 +572,7 @@ public class Action extends BaseClass {
 		}
 	}
 	
-	public static Boolean switchToOldWindow(WebDriver driver)
-			throws Throwable {
+	public boolean switchToOldWindow(WebDriver driver) {
 		boolean flag = false;
 		try {
 
@@ -600,7 +593,7 @@ public class Action extends BaseClass {
 		}
 	}
 	
-	public static int getColumncount(WebElement row) throws Exception {
+	public int getColumncount(WebElement row) {
 		List<WebElement> columns = row.findElements(By.tagName("td"));
 		int a = columns.size();
 		System.out.println(columns.size());
@@ -612,7 +605,7 @@ public class Action extends BaseClass {
 	}
 	
 	
-	public static int getRowCount(WebElement table) throws Exception {
+	public int getRowCount(WebElement table) {
 		List<WebElement> rows = table.findElements(By.tagName("tr"));
 		int a = rows.size() - 1;
 		return a;
@@ -625,7 +618,7 @@ public class Action extends BaseClass {
 	 * @return: Boolean (True: If alert preset, False: If no alert)
 	 * 
 	 */
-	public static boolean Alert(WebDriver driver) throws Throwable {
+	public boolean Alert(WebDriver driver) {
 		boolean presentFlag = false;
 		Alert alert = null;
 
@@ -651,7 +644,7 @@ public class Action extends BaseClass {
 		return presentFlag;
 	}
 
-	public static boolean launchUrl(WebDriver driver,String url) throws Throwable {
+	public boolean launchUrl(WebDriver driver,String url) {
 		boolean flag = false;
 		try {
 			driver.navigate().to(url);
@@ -669,7 +662,7 @@ public class Action extends BaseClass {
 	}
 	
 	
-	public static boolean isAlertPresent(WebDriver driver) 
+	public boolean isAlertPresent(WebDriver driver) 
 	{ 
 		try 
 		{ 
@@ -683,7 +676,7 @@ public class Action extends BaseClass {
 	}
 	
 	
-	public static String getTitle(WebDriver driver) throws Throwable {
+	public String getTitle(WebDriver driver) {
 		boolean flag = false;
 
 		String text = driver.getTitle();
@@ -704,8 +697,7 @@ public class Action extends BaseClass {
 	}
 	
 	
-	public static boolean click1(WebElement locator, String locatorName)
-			throws Throwable {
+	public boolean click1(WebElement locator, String locatorName) {
 		boolean flag = false;
 		try {
 			locator.click();
@@ -724,7 +716,7 @@ public class Action extends BaseClass {
 	}
 	
 	
-	public static void fluentWait(WebDriver driver,WebElement element, int timeOut) {
+	public void fluentWait(WebDriver driver,WebElement element, int timeOut) {
 	    Wait<WebDriver> wait = null;
 	    try {
 	        wait = new FluentWait<WebDriver>((WebDriver) driver)
@@ -737,20 +729,20 @@ public class Action extends BaseClass {
 	    }
 	}
 	
-	public static void implicitWait(WebDriver driver, int timeOut) {
+	public void implicitWait(WebDriver driver, int timeOut) {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 	
-	public static void explicitWait(WebDriver driver, WebElement element, int timeOut ) {
+	public void explicitWait(WebDriver driver, WebElement element, int timeOut ) {
 		WebDriverWait wait = new WebDriverWait(driver,timeOut);
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 	
-	public static void pageLoadTimeOut(WebDriver driver, int timeOut) {
+	public void pageLoadTimeOut(WebDriver driver, int timeOut) {
 		driver.manage().timeouts().pageLoadTimeout(timeOut, TimeUnit.SECONDS);
 	}
 	
-	public static String screenShot(WebDriver driver, String filename) {
+	public String screenShot(WebDriver driver, String filename) {
 		String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
 		TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
 		File source = takesScreenshot.getScreenshotAs(OutputType.FILE);
@@ -767,7 +759,7 @@ public class Action extends BaseClass {
 		return newImageString;
 	}
 
-	public static String getCurrentTime() {
+	public String getCurrentTime() {
 		String currentDate = new SimpleDateFormat("yyyy-MM-dd-hhmmss").format(new Date());
 		return currentDate;
 	}

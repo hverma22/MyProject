@@ -16,6 +16,8 @@ import com.mystore.base.BaseClass;
  */
 public class PaymentPage extends BaseClass {
 	
+	Action action= new Action();
+	
 	@FindBy(xpath = "//a[contains(text(),'Pay by bank wire')]")
 	WebElement bankWireMethod;
 	
@@ -27,7 +29,7 @@ public class PaymentPage extends BaseClass {
 	}
 	
 	public OrderSummary clickOnPaymentMethod() throws Throwable {
-		Action.click(getDriver(), bankWireMethod);
+		action.click(getDriver(), bankWireMethod);
 		return new OrderSummary();
 	}
 

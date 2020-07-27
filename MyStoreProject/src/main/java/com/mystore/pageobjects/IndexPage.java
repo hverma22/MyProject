@@ -9,6 +9,8 @@ import com.mystore.base.BaseClass;
 
 public class IndexPage extends BaseClass {
 	
+	Action action= new Action();
+	
 	@FindBy(xpath = "//a[@class='login']") 
 	WebElement signInBtn;
 	
@@ -26,13 +28,13 @@ public class IndexPage extends BaseClass {
 	}
 	
 	public LoginPage clickOnSignIn() throws Throwable {
-		Action.fluentWait(getDriver(), signInBtn, 10);
-		Action.click(getDriver(), signInBtn);
+		action.fluentWait(getDriver(), signInBtn, 10);
+		action.click(getDriver(), signInBtn);
 		return new LoginPage();
 	}
 	
 	public boolean validateLogo() throws Throwable {
-		return Action.isDisplayed(getDriver(), myStoreLogo);
+		return action.isDisplayed(getDriver(), myStoreLogo);
 	}
 	
 	public String getMyStoreTitle() {
@@ -41,9 +43,9 @@ public class IndexPage extends BaseClass {
 	}
 	
 	public SearchResultPage searchProduct(String productName) throws Throwable {
-		Action.type(searchProductBox, productName);
-		Action.scrollByVisibilityOfElement(getDriver(), searchButton);
-		Action.click(getDriver(), searchButton);
+		action.type(searchProductBox, productName);
+		action.scrollByVisibilityOfElement(getDriver(), searchButton);
+		action.click(getDriver(), searchButton);
 		Thread.sleep(3000);
 		return new SearchResultPage();
 	}

@@ -25,7 +25,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 	public static Properties prop;
-	// public static WebDriver driver;
+	Action action= new Action();
 
 	// Declare ThreadLocal Driver
 	public static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
@@ -70,8 +70,8 @@ public class BaseClass {
 			driver.set(new InternetExplorerDriver());
 		}
 		getDriver().manage().window().maximize();
-		Action.implicitWait(getDriver(), 10);
-		Action.pageLoadTimeOut(getDriver(), 30);
+		action.implicitWait(getDriver(), 10);
+		action.pageLoadTimeOut(getDriver(), 30);
 		getDriver().get(prop.getProperty("url"));
 	}
 

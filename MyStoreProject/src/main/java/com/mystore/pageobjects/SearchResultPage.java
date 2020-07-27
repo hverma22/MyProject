@@ -16,6 +16,8 @@ import com.mystore.base.BaseClass;
  */
 public class SearchResultPage extends BaseClass {
 	
+	Action action= new Action();
+	
 	@FindBy(xpath="//*[@id=\"center_column\"]//img")
 	WebElement productResult;
 	
@@ -24,11 +26,11 @@ public class SearchResultPage extends BaseClass {
 	}
 	
 	public boolean isProductAvailable() throws Throwable {
-		return Action.isDisplayed(getDriver(), productResult);
+		return action.isDisplayed(getDriver(), productResult);
 	}
 	
 	public AddToCartPage clickOnProduct() throws Throwable {
-		Action.click(getDriver(), productResult);
+		action.click(getDriver(), productResult);
 		return new AddToCartPage();
 	}
 	

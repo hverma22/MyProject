@@ -62,7 +62,7 @@ public class EndToEndTest extends BaseClass {
 		addToCartPage.clickOnAddToCart();
 		orderPage=addToCartPage.clickOnCheckOut();
 		loginPage=orderPage.clickOnCheckOut();
-		addressPage=loginPage.login1(prop.getProperty("username"), prop.getProperty("password"));
+		addressPage=loginPage.login(prop.getProperty("username"), prop.getProperty("password"),addressPage);
 		shippingPage=addressPage.clickOnCheckOut();
 		shippingPage.checkTheTerms();
 		paymentPage=shippingPage.clickOnProceedToCheckOut();
