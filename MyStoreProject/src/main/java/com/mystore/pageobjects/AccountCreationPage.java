@@ -83,17 +83,12 @@ public class AccountCreationPage extends BaseClass {
 		PageFactory.initElements(getDriver(), this);
 	}
 	
-	public HomePage validateRegistration() throws Throwable {
-		registerBtn.click();
-		return new HomePage();
-	}
-	
 	public void createAccount(String gender,String fName, 
 			String lName, 
 			String pswd, 
-			String days1, 
-			String month1, 
-			String year1,
+			String day, 
+			String month, 
+			String year,
 			String comPany, 
 			String addr, 
 			String cityString, 
@@ -111,9 +106,9 @@ public class AccountCreationPage extends BaseClass {
 		action.type(firstName, fName);
 		action.type(lastName, lName);
 		action.type(passWord, pswd);
-		action.selectByValue(days, days1);
-		action.selectByValue(months, month1);
-		action.selectByValue(years, year1);
+		action.selectByValue(days, day);
+		action.selectByValue(months, month);
+		action.selectByValue(years, year);
 		action.type(companyName, comPany);
 		action.type(address, addr);
 		action.type(city, cityString);
@@ -121,6 +116,11 @@ public class AccountCreationPage extends BaseClass {
 		action.type(postCode, zip);
 		action.selectByVisibleText(countryName, country);
 		action.type(mobile, mobilePhone);
+	}
+	
+	public HomePage validateRegistration() throws Throwable {
+		registerBtn.click();
+		return new HomePage();
 	}
 	
 	public boolean validateAcountCreatePage() throws Throwable {

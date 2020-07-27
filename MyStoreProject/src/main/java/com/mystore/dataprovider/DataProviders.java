@@ -99,8 +99,7 @@ public class DataProviders {
 	@DataProvider(name = "newAcountDetailsData")
 	public Object[][] accountCreation() {
 
-		List<HashMap<String, String>> arrayMapList = new ArrayList<HashMap<String, String>>();
-		HashMap<String, String> hashMapItems = new HashMap<String, String>();
+		HashMap<String, String> hashMap = new HashMap<String, String>();
 
 		// Totals rows count
 		int rows = obj.getRowCount("AccountCreationData");
@@ -110,12 +109,12 @@ public class DataProviders {
 		
 		for (int i = 0; i < actRows; i++) {
 			for (int j = 0; j < column; j++) {
-				hashMapItems.put(obj.getCellData("AccountCreationData", j, 1),
+				hashMap.put(obj.getCellData("AccountCreationData", j, 1),
 						obj.getCellData("AccountCreationData", j, i + 2));
 			}
 		}
 		return new Object[][] {
-	        {hashMapItems}
+	        {hashMap}
 	    };
 	}
 
