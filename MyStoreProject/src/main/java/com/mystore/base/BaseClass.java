@@ -23,13 +23,18 @@ import com.mystore.actiondriver.Action;
 import com.mystore.utility.ExtentManager;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-
+/**
+ * @author Hitendra: BaseClass is used to load the config file and Initialize 
+ * WebDriver
+ *  
+ */
 public class BaseClass {
 	public static Properties prop;
 
 	// Declare ThreadLocal Driver
 	public static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
 
+	//loadConfig method is to load the configuration
 	@BeforeSuite(groups = { "Smoke", "Sanity", "Regression" })
 	public void loadConfig() {
 		ExtentManager.setExtent();
@@ -57,16 +62,13 @@ public class BaseClass {
 		// String browserName = prop.getProperty("browser");
 		if (browserName.equalsIgnoreCase("Chrome")) {
 			WebDriverManager.chromedriver().setup();
-			// driver = new ChromeDriver();
 			// Set Browser to ThreadLocalMap
 			driver.set(new ChromeDriver());
 		} else if (browserName.equalsIgnoreCase("FireFox")) {
 			WebDriverManager.firefoxdriver().setup();
-			// driver = new FirefoxDriver();
 			driver.set(new FirefoxDriver());
 		} else if (browserName.equalsIgnoreCase("IE")) {
 			WebDriverManager.iedriver().setup();
-			// driver = new InternetExplorerDriver();
 			driver.set(new InternetExplorerDriver());
 		}
 		//Maximize the screen
