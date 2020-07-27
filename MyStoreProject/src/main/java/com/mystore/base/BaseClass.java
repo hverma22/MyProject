@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.xml.DOMConfigurator;
 import org.ietf.jgss.Oid;
@@ -25,7 +26,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 	public static Properties prop;
-	Action action= new Action();
 
 	// Declare ThreadLocal Driver
 	public static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
@@ -69,9 +69,14 @@ public class BaseClass {
 			// driver = new InternetExplorerDriver();
 			driver.set(new InternetExplorerDriver());
 		}
+		//Maximize the screen
 		getDriver().manage().window().maximize();
-		action.implicitWait(getDriver(), 10);
-		action.pageLoadTimeOut(getDriver(), 30);
+		//Implicit Timeout
+		getDriver().manage().timeouts().implicitlyWait
+		(Integer.parseInt(prop.getProperty("implicitWait")),TimeUnit.SECONDS);
+		//PageLoad Timeout
+		getDriver().manage().timeouts().pageLoadTimeout
+		(Integer.parseInt(prop.getProperty("pageLoadTimeOut")),TimeUnit.SECONDS);
 		getDriver().get(prop.getProperty("url"));
 	}
 
