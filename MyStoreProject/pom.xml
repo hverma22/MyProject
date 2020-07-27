@@ -80,10 +80,10 @@
 				<version>3.0.0-M4</version>
 				<configuration>
 					<suiteXmlFiles>
-						<suiteXmlFile>testng_all.xml</suiteXmlFile>
+						<suiteXmlFile>${xmlFiles}</suiteXmlFile>
 					</suiteXmlFiles>
 					<systemPropertyVariables>
-						<appURL>http://automationpractice.com/index.php</appURL>
+						<appURL>${url}</appURL>
 					</systemPropertyVariables>
 				</configuration>
 			</plugin>
