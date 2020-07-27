@@ -71,12 +71,15 @@ public class BaseClass {
 		}
 		//Maximize the screen
 		getDriver().manage().window().maximize();
-		//Implicit Timeout
+		//Delete all the cookies
+		getDriver().manage().deleteAllCookies();
+		//Implicit TimeOuts
 		getDriver().manage().timeouts().implicitlyWait
 		(Integer.parseInt(prop.getProperty("implicitWait")),TimeUnit.SECONDS);
-		//PageLoad Timeout
+		//PageLoad TimeOuts
 		getDriver().manage().timeouts().pageLoadTimeout
 		(Integer.parseInt(prop.getProperty("pageLoadTimeOut")),TimeUnit.SECONDS);
+		//Launching the URL
 		getDriver().get(prop.getProperty("url"));
 	}
 
