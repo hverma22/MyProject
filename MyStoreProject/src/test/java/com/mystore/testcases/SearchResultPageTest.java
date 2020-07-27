@@ -20,8 +20,8 @@ import com.mystore.utility.Log;
  *
  */
 public class SearchResultPageTest extends BaseClass {
-	IndexPage index;
-	SearchResultPage searchResultPage;
+	private IndexPage index;
+	private SearchResultPage searchResultPage;
 	
 	@Parameters("browser")
 	@BeforeMethod(groups = {"Smoke","Sanity","Regression"})

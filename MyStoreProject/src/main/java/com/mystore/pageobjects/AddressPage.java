@@ -19,7 +19,7 @@ public class AddressPage extends BaseClass {
 	Action action= new Action();
 	
 	@FindBy(xpath="//span[text()='Proceed to checkout']")
-	WebElement proceedToCheckOut;
+	private WebElement proceedToCheckOut;
 	
 	public AddressPage() {
 		PageFactory.initElements(getDriver(), this);

@@ -19,19 +19,19 @@ public class LoginPage extends BaseClass {
 	Action action= new Action();
 	
 	@FindBy(id="email")
-	WebElement userName;
+	private WebElement userName;
 	
 	@FindBy(id="passwd")
-	WebElement password;
+	private WebElement password;
 
 	@FindBy(id="SubmitLogin")
-	WebElement signInBtn;
+	private WebElement signInBtn;
 	
 	@FindBy(name="email_create")
-	WebElement emailForNewAccount;
+	private WebElement emailForNewAccount;
 	
 	@FindBy(name="SubmitCreate")
-	WebElement createNewAccountBtn;
+	private WebElement createNewAccountBtn;
 	
 	public LoginPage() {
 		PageFactory.initElements(getDriver(), this);

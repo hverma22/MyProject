@@ -19,10 +19,10 @@ public class ShippingPage extends BaseClass {
 	Action action= new Action();
 	
 	@FindBy(id="cgv")
-	WebElement terms;
+	private WebElement terms;
 	
 	@FindBy(xpath="//button/span[contains(text(),'Proceed to checkout')]")
-	WebElement proceedToCheckOutBtn;
+	private WebElement proceedToCheckOutBtn;
 	
 	public ShippingPage() {
 		PageFactory.initElements(getDriver(), this);

@@ -16,7 +16,7 @@ import com.mystore.utility.Log;
  *
  */
 public class IndexPageTest extends BaseClass {
-	IndexPage indexPage;
+	private IndexPage indexPage;
     
 	@Parameters("browser")
 	@BeforeMethod(groups = {"Smoke","Sanity","Regression"})

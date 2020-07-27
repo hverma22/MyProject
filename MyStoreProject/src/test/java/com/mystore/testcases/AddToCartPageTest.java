@@ -22,9 +22,9 @@ import com.mystore.utility.Log;
  */
 public class AddToCartPageTest extends BaseClass {
 	
-	IndexPage index;
-	SearchResultPage searchResultPage;
-	AddToCartPage addToCartPage;
+	private IndexPage index;
+	private SearchResultPage searchResultPage;
+	private AddToCartPage addToCartPage;
 
 	@Parameters("browser")
 	@BeforeMethod(groups = {"Smoke","Sanity","Regression"})

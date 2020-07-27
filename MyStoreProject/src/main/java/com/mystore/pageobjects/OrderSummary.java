@@ -21,7 +21,7 @@ public class OrderSummary extends BaseClass {
 	Action action= new Action();
 	
 	@FindBy(xpath="//span[contains(text(),'I confirm my order')]")
-	WebElement confirmOrderBtn;
+	private WebElement confirmOrderBtn;
 	
 	public OrderSummary() {
 		PageFactory.initElements(getDriver(), this);

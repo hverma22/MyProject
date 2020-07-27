@@ -12,16 +12,16 @@ public class IndexPage extends BaseClass {
 	Action action= new Action();
 	
 	@FindBy(xpath = "//a[@class='login']") 
-	WebElement signInBtn;
+	private WebElement signInBtn;
 	
 	@FindBy(xpath = "//img[@class='logo img-responsive']")
-	WebElement myStoreLogo;
+	private WebElement myStoreLogo;
 	
 	@FindBy(id="search_query_top")
-	WebElement searchProductBox;
+	private WebElement searchProductBox;
 	
 	@FindBy(name="submit_search")
-	WebElement searchButton;
+	private WebElement searchButton;
 	
 	public IndexPage() {
 		PageFactory.initElements(getDriver(), this);

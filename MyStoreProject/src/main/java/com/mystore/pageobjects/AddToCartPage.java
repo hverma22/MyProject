@@ -19,19 +19,19 @@ public class AddToCartPage extends BaseClass {
 	Action action= new Action();
 	
 	@FindBy(id="quantity_wanted")
-	WebElement quantity;
+	private WebElement quantity;
 	
 	@FindBy(name="group_1")
-	WebElement size;
+	private WebElement size;
 	
 	@FindBy(xpath="//span[text()='Add to cart']")
-	WebElement addToCartBtn;
+	private WebElement addToCartBtn;
 	
 	@FindBy(xpath="//*[@id=\"layer_cart\"]//h2/i")
-	WebElement addToCartMessag;
+	private WebElement addToCartMessag;
 	
 	@FindBy(xpath="//span[contains(text(),'Proceed to checkout')]")
-	WebElement proceedToCheckOutBtn;
+	private WebElement proceedToCheckOutBtn;
 	
 	public AddToCartPage() {
 		PageFactory.initElements(getDriver(), this);

@@ -37,6 +37,7 @@ public interface ActionInterface {
 	public boolean Alert(WebDriver driver);
 	public boolean launchUrl(WebDriver driver,String url);
 	public boolean isAlertPresent(WebDriver driver);
+	public String getCurrentURL(WebDriver driver);
 	public String getTitle(WebDriver driver);
 	public boolean click1(WebElement locator, String locatorName);
 	public void fluentWait(WebDriver driver,WebElement element, int timeOut);

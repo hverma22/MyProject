@@ -17,67 +17,67 @@ public class AccountCreationPage extends BaseClass {
 	Action action= new Action();
 	
 	@FindBy(xpath = "//h1[text()='Create an account']")
-	WebElement formTitle;
+	private WebElement formTitle;
 	
 	@FindBy(id = "uniform-id_gender1")
-	WebElement mr;
+	private WebElement mr;
 	
 	@FindBy(id = "id_gender2")
-	WebElement mrs;
+	private WebElement mrs;
 
 	@FindBy(name = "customer_firstname")
-	WebElement firstName;
+	private WebElement firstName;
 
 	@FindBy(name = "customer_lastname")
-	WebElement lastName;
+	private WebElement lastName;
 
 	@FindBy(name = "passwd")
-	WebElement passWord;
+	private WebElement passWord;
 
 	@FindBy(name = "days")
-	WebElement days;
+	private WebElement days;
 
 	@FindBy(name = "months")
-	WebElement months;
+	private WebElement months;
 
 	@FindBy(name = "years")
-	WebElement years;
+	private WebElement years;
 
 	@FindBy(name = "firstname")
-	WebElement customerNirstName;
+	private WebElement customerNirstName;
 
 	@FindBy(name = "lastname")
-	WebElement customerLastName;
+	private WebElement customerLastName;
 
 	@FindBy(name = "company")
-	WebElement companyName;
+	private WebElement companyName;
 
 	@FindBy(name = "address1")
-	WebElement address;
+	private WebElement address;
 
 	@FindBy(name = "city")
-	WebElement city;
+	private WebElement city;
 
 	@FindBy(name = "id_state")
-	WebElement state;
+	private WebElement state;
 
 	@FindBy(name = "postcode")
-	WebElement postCode;
+	private WebElement postCode;
 
 	@FindBy(name = "id_country")
-	WebElement country;
+	private WebElement country;
 
 	@FindBy(name = "phone")
-	WebElement phone;
+	private WebElement phone;
 
 	@FindBy(name = "phone_mobile")
-	WebElement mobile;
+	private WebElement mobile;
 
 	@FindBy(name = "alias")
-	WebElement ref;
+	private WebElement ref;
 
 	@FindBy(name = "submitAccount")
-	WebElement registerBtn;
+	private WebElement registerBtn;
 	
 	public AccountCreationPage() {
 		PageFactory.initElements(getDriver(), this);

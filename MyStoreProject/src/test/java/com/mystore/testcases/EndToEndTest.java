@@ -29,16 +29,16 @@ import com.mystore.utility.Log;
  */
 public class EndToEndTest extends BaseClass {
 	
-	IndexPage index;
-	SearchResultPage searchResultPage;
-	AddToCartPage addToCartPage;
-	OrderPage orderPage;
-	LoginPage loginPage;
-	AddressPage addressPage;
-	ShippingPage shippingPage;
-	PaymentPage paymentPage;
-	OrderSummary orderSummary;
-	OrderConfirmationPage orderConfirmationPage;
+	private IndexPage index;
+	private SearchResultPage searchResultPage;
+	private AddToCartPage addToCartPage;
+	private OrderPage orderPage;
+	private LoginPage loginPage;
+	private AddressPage addressPage;
+	private ShippingPage shippingPage;
+	private PaymentPage paymentPage;
+	private OrderSummary orderSummary;
+	private OrderConfirmationPage orderConfirmationPage;
 
 	@Parameters("browser")
 	@BeforeMethod(groups = {"Smoke","Sanity","Regression"})

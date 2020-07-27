@@ -19,10 +19,10 @@ public class HomePage extends BaseClass {
 	Action action= new Action();
 	
 	@FindBy(xpath="//span[text()='My wishlists']")
-	WebElement myWishList;
+	private WebElement myWishList;
 	
 	@FindBy(xpath = "//span[text()='Order history and details']")
-	WebElement orderHistory;
+	private WebElement orderHistory;
 	
 	public HomePage() {
 		PageFactory.initElements(getDriver(), this);
@@ -38,7 +38,7 @@ public class HomePage extends BaseClass {
 	}
 	
 	public String getCurrURL() throws Throwable {
-		String homePageURL=Action.getCurrentURL(getDriver());
+		String homePageURL=action.getCurrentURL(getDriver());
 		return homePageURL;
 	}
 }

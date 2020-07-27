@@ -19,10 +19,10 @@ public class PaymentPage extends BaseClass {
 	Action action= new Action();
 	
 	@FindBy(xpath = "//a[contains(text(),'Pay by bank wire')]")
-	WebElement bankWireMethod;
+	private WebElement bankWireMethod;
 	
 	@FindBy(xpath = "//a[contains(text(),'Pay by check')]")
-	WebElement payByCheckMethod;
+	private WebElement payByCheckMethod;
 	
 	public PaymentPage() {
 		PageFactory.initElements(getDriver(), this);

@@ -14,10 +14,10 @@ import com.mystore.pageobjects.LoginPage;
 import com.mystore.utility.Log;
 
 public class AccountCreationPageTest extends BaseClass {
-	IndexPage indexPage;
-	LoginPage loginPage;
-	AccountCreationPage acountCreationPage;
-	HomePage homePage;
+	private IndexPage indexPage;
+	private LoginPage loginPage;
+	private AccountCreationPage acountCreationPage;
+	private HomePage homePage;
 	
 	@Parameters("browser")
 	@BeforeMethod(groups = {"Smoke","Sanity","Regression"})

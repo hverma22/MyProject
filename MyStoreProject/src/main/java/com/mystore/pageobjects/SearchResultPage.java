@@ -19,7 +19,7 @@ public class SearchResultPage extends BaseClass {
 	Action action= new Action();
 	
 	@FindBy(xpath="//*[@id=\"center_column\"]//img")
-	WebElement productResult;
+	private WebElement productResult;
 	
 	public SearchResultPage() {
 		PageFactory.initElements(getDriver(), this);

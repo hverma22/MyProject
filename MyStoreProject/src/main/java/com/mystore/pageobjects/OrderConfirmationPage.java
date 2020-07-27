@@ -19,7 +19,7 @@ public class OrderConfirmationPage extends BaseClass {
 	Action action= new Action();
 	
 	@FindBy(xpath="//p/strong[contains(text(),'Your order on My Store is complete.')]")
-	WebElement confirmMessag;
+	private WebElement confirmMessag;
 	
 	public OrderConfirmationPage() {
 		PageFactory.initElements(getDriver(), this);

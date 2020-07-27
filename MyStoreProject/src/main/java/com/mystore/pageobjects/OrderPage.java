@@ -19,13 +19,13 @@ public class OrderPage extends BaseClass {
 	Action action= new Action();
 	
 	@FindBy(xpath="//td[@class='cart_unit']/span/span")
-	WebElement unitPrice;
+	private WebElement unitPrice;
 	
 	@FindBy(id="total_price")
-	WebElement totalPrice;
+	private WebElement totalPrice;
 	
 	@FindBy(xpath="//span[text()='Proceed to checkout']")
-	WebElement proceedToCheckOut;
+	private WebElement proceedToCheckOut;
 	
 	public OrderPage() {
 		PageFactory.initElements(getDriver(), this);

@@ -23,10 +23,10 @@ import com.mystore.utility.Log;
  */
 public class OrderPageTest extends BaseClass {
 
-	IndexPage index;
-	SearchResultPage searchResultPage;
-	AddToCartPage addToCartPage;
-	OrderPage orderPage;
+	private IndexPage index;
+	private SearchResultPage searchResultPage;
+	private AddToCartPage addToCartPage;
+	private OrderPage orderPage;
 
 	@Parameters("browser")
 	@BeforeMethod(groups = {"Smoke","Sanity","Regression"})

@@ -21,9 +21,9 @@ import com.mystore.utility.Log;
  *
  */
 public class LoginPageTest extends BaseClass {
-	IndexPage indexPage;
-	LoginPage loginPage;
-	HomePage homePage;
+	private IndexPage indexPage;
+	private LoginPage loginPage;
+	private HomePage homePage;
 	
 	@Parameters("browser")
 	@BeforeMethod(groups = {"Smoke","Sanity","Regression"})
