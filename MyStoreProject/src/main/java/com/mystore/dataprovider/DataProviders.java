@@ -6,6 +6,7 @@ package com.mystore.dataprovider;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.testng.annotations.DataProvider;
 
@@ -99,23 +100,23 @@ public class DataProviders {
 	@DataProvider(name = "newAcountDetailsData")
 	public Object[][] accountCreation() {
 
-		HashMap<String, String> hashMap = new HashMap<String, String>();
-
 		// Totals rows count
 		int rows = obj.getRowCount("AccountCreationData");
 		// Total Columns
 		int column = obj.getColumnCount("AccountCreationData");
 		int actRows = rows - 1;
+		//Created an object array to store data
+		Object[][] data = new Object[actRows][1];
 		
 		for (int i = 0; i < actRows; i++) {
+			Map<String, String> hashMap = new HashMap<>();
 			for (int j = 0; j < column; j++) {
 				hashMap.put(obj.getCellData("AccountCreationData", j, 1),
 						obj.getCellData("AccountCreationData", j, i + 2));
 			}
+			data[i][0]=hashMap;
 		}
-		return new Object[][] {
-	        {hashMap}
-	    };
+		return data;
 	}
 
 }
