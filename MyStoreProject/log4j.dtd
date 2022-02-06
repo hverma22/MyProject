@@ -1,0 +1,15 @@
+<!ELEMENT configuration (appender+,root)>
+<!ATTLIST configuration debug NMTOKEN #REQUIRED>
+<!ELEMENT appender (param,layout)>
+<!ATTLIST appender name NMTOKEN #REQUIRED>
+<!ATTLIST appender class NMTOKEN #REQUIRED>
+<!ELEMENT param EMPTY>
+<!ATTLIST param name NMTOKEN #REQUIRED>
+<!ATTLIST param value CDATA #REQUIRED>
+<!ELEMENT layout (param)>
+<!ATTLIST layout class NMTOKEN #REQUIRED>
+<!ELEMENT root (priority,appender-ref+)>
+<!ELEMENT priority EMPTY>
+<!ATTLIST priority value NMTOKEN #REQUIRED>
+<!ELEMENT appender-ref EMPTY>
+<!ATTLIST appender-ref ref NMTOKEN #REQUIRED>
