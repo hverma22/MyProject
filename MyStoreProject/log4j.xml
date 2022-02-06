@@ -9,7 +9,6 @@
     <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />
     </layout>
   </appender>
- 
   <appender name="fileAppender" class="org.apache.log4j.RollingFileAppender">
     <param name="File" value="Logs/log4j.log"/>
     <layout class="org.apache.log4j.PatternLayout">
