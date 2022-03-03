@@ -40,7 +40,7 @@ public class ListenerClass extends ExtentManager implements ITestListener {
 				test.fail("ScreenShot is Attached", MediaEntityBuilder.createScreenCaptureFromPath(imgPath).build());
 				
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
+				
 				e.printStackTrace();
 			}
 		}
@@ -53,15 +53,15 @@ public class ListenerClass extends ExtentManager implements ITestListener {
 	}
 
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-		// TODO Auto-generated method stub
+		
 	}
 
 	public void onStart(ITestContext context) {
-		// TODO Auto-generated method stub
+		
 
 	}
 
 	public void onFinish(ITestContext context) {
-		// TODO Auto-generated method stub
+		
 	}
 }

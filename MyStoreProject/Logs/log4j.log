@@ -384,3 +384,13 @@
 2020-07-27 20:36:44 DEBUG cache:45 - TemplateLoader.findTemplateSource("v3html/logs-view/v3-html-testrunner-logs-view_en.ftl"): Not found
 2020-07-27 20:36:44 DEBUG cache:45 - TemplateLoader.findTemplateSource("v3html/logs-view/v3-html-testrunner-logs-view.ftl"): Found
 2020-07-27 20:36:44 DEBUG cache:45 - Loading template for "v3html/logs-view/v3-html-testrunner-logs-view.ftl"("en", UTF-8, parsed) from "jar:file:/C:/Users/Hitendra/.m2/repository/com/aventstack/extentreports/4.0.9/extentreports-4.0.9.jar!/com/aventstack/extentreports/view/v3html/logs-view/v3-html-testrunner-logs-view.ftl"
+2022-03-03 22:00:34 INFO  Log:11 - =====================================verifyTotalPrice TEST START=========================================
+2022-03-03 22:00:48 INFO  Log:15 - =====================================verifyTotalPrice TEST END=========================================
+2022-03-03 22:00:57 INFO  Log:11 - =====================================addToCartTest TEST START=========================================
+2022-03-03 22:01:10 INFO  Log:15 - =====================================addToCartTest TEST END=========================================
+2022-03-03 22:01:19 INFO  Log:11 - =====================================endToEndTest TEST START=========================================
+2022-03-03 22:02:21 INFO  Log:11 - =====================================createAccountTest TEST START=========================================
+2022-03-03 22:02:51 INFO  Log:11 - =====================================createAccountTest TEST START=========================================
+2022-03-03 22:03:18 INFO  Log:11 - =====================================createAccountTest TEST START=========================================
+2022-03-03 22:03:49 INFO  Log:11 - =====================================verifyCreateAccountPageTest TEST START=========================================
+2022-03-03 22:04:12 INFO  Log:11 - =====================================addToCartTest TEST START=========================================
