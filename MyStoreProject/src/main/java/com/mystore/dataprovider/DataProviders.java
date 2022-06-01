@@ -78,7 +78,7 @@ public class DataProviders {
 		return data;
 	}
 
-	// Class --> SearchResultPageTest, Test Case--> productAvailabilityTest
+     // Class --> SearchResultPageTest, Test Case--> productAvailabilityTest
 	@DataProvider(name = "searchProduct")
 	public Object[][] getProductPrice() {
 		// Totals rows count
