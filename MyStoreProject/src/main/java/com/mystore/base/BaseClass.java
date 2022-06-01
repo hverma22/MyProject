@@ -1,4 +1,4 @@
-package com.mystore.base;
+ package com.mystore.base;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -24,7 +24,7 @@ import com.mystore.utility.ExtentManager;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 /**
- * @author Hitendra: BaseClass is used to load the config file and Initialize 
+ * @author Rishabh: BaseClass is used to load the config file and Initialize 
  * WebDriver
  *  
  */
